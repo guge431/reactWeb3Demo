@@ -70,9 +70,9 @@ const App = () => {
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
               <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">T</span>
+                <span className="text-white font-bold text-xl">G</span>
               </div>
-              <span className="ml-3 text-xl font-bold text-gray-900">TechCorp</span>
+              <span className="ml-3 text-xl font-bold text-gray-900">Guge</span>
             </div>
             
             <div className="hidden md:flex space-x-8">
