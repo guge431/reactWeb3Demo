@@ -86,7 +86,7 @@ const App = () => {
                       : scrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-300'
                   }`}
                 >
-                  {item === 'home' && '首页'}
+                  {item === 'home' && 'guge首页'}
                   {item === 'about' && '关于我们'}
                   {item === 'services' && '服务'}
                   {item === 'testimonials' && '客户评价'}
