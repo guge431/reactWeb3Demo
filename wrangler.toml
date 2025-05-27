@@ -1,10 +1,8 @@
 name = "guge"
-type = "javascript"
 compatibility_date = "2025-05-27"
 
 [build]
 command = "npm run build"
 
-[upload]
-format = "directory"
-dir = "./build"
+[assets]
+directory = "./build"
