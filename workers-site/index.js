@@ -1,43 +1,30 @@
+// 
 import { getAssetFromKV, serveSinglePageApp } from '@cloudflare/kv-asset-handler';
 
-addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request));
+addEventListener("fetch", event => {
+  event.respondWith(handleEvent(event));
 });
 
-async function handleRequest(request) {
-  const url = new URL(request.url);
-  const corsHeaders = {
-    'Access-Control-Allow-Origin': 'http://localhost:3000', // 本地开发
-    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-    'Access-Control-Allow-Headers': '*',
-    'Access-Control-Max-Age': '86400',
-  };
+async function handleEvent(event) {
+  const url = new URL(event.request.url);
 
-  // 处理预检请求（OPTIONS）
-  if (request.method === 'OPTIONS') {
-    return new Response(null, {
-      status: 204,
-      headers: corsHeaders,
-    });
+  // 👉 API 路由：处理 /api/time
+  if (url.pathname === "/api/time") {
+    return new Response(
+      JSON.stringify({ time: new Date().toISOString() }),
+      {
+        headers: { "Content-Type": "application/json" },
+        status: 200,
+      }
+    );
   }
 
-  // 处理 API 请求
-  if (url.pathname.startsWith('/api/hello')) {
-    return new Response(JSON.stringify({ message: 'Hello from Worker!' }), {
-      status: 200,
-      headers: {
-        'Content-Type': 'application/json',
-        ...corsHeaders,
-      },
-    });
-  }
-
-  // 服务静态资源（CRA 的 build 文件）
+  // ✅ 静态资源 + CRA 路由处理
   try {
     return await getAssetFromKV(event, {
       mapRequestToAsset: serveSinglePageApp,
     });
-  } catch (error) {
-    return new Response('Not Found', { status: 404 });
+  } catch (e) {
+    return new Response("Not Found", { status: 404 });
   }
 }

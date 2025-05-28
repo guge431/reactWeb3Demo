@@ -6,7 +6,19 @@ const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [time, setTime] = useState("");
 
+  useEffect(() => {
+    fetch("/api/time")
+      .then(res => {
+        if (!res.ok) throw new Error("Network response was not ok");
+        return res.json();
+      })
+      .then(data => setTime(data.time))
+      .catch(err => {
+        console.error("Failed to fetch time:", err);
+      });
+  }, []);
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -23,16 +35,29 @@ const App = () => {
   //点击调取worker后端
   const clickWorker=async()=>{
     console.log('clickWorker');
-
-    try {
-      const res = await fetch("https://guge.chuanzhenhe58.workers.dev/api/hello");
-      const data = await res.json();
-      console.log('data111111111111', data);
-      // setMessage(data.message);
-    } catch (err) {
-      // setMessage("请求失败");
-      console.error(err);
-    }
+    // fetch("/api/time")
+    // .then(res => {
+    //   if (!res.ok) throw new Error("Network response was not ok");
+    //   return res.json();
+    // })
+    // .then(data => {
+    //   setTime(data.time);
+    //   console.log('data11111111111', data);
+    // })
+    // .catch(err => {
+    //   console.log('data2222222222', err);
+    // })
+    
+    // try {
+    //   const res = await fetch("https://guge.wps.baby/api/hello");
+    //   const data = await res.json();
+    //   console.log('data111111111111', data);
+    //   // setMessage(data.message);
+    // } catch (err) {
+    //   // setMessage("请求失败");
+    //   // console.error(err);
+    //   console.log('data22222222', err);
+    // }
   
 
   }

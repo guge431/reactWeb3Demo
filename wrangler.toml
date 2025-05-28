@@ -10,9 +10,6 @@ zone_name = "guge.wps.baby"
 [build]
 command = "npm run build"
 
-[assets]
-directory = "./build"
-
 
 [site]
 bucket = "./build"
