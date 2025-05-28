@@ -7,7 +7,7 @@ const App = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   // const [time, setTime] = useState("");
-  // const [msg, setMsg] = useState("加载中...");
+  const [msg, setMsg] = useState("加载中...");
 
  
   useEffect(() => {
@@ -26,34 +26,17 @@ const App = () => {
   //点击调取worker后端
   const clickWorker=async()=>{
     console.log('clickWorker');
-    fetch('https://guge.wps.baby/api/hello')
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error('Error:', error));
-    // fetch("/api/time")
-    // .then(res => {
-    //   if (!res.ok) throw new Error("Network response was not ok");
-    //   return res.json();
-    // })
-    // .then(data => {
-    //   setTime(data.time);
-    //   console.log('data11111111111', data);
-    // })
-    // .catch(err => {
-    //   console.log('data2222222222', err);
-    // })
-    
-    // try {
-    //   const res = await fetch("https://guge.wps.baby/api/hello");
-    //   const data = await res.json();
-    //   console.log('data111111111111', data);
-    //   // setMessage(data.message);
-    // } catch (err) {
-    //   // setMessage("请求失败");
-    //   // console.error(err);
-    //   console.log('data22222222', err);
-    // }
-  
+  //   fetch('https://guge.wps.baby/api/hello')
+  // .then(response => response.json())
+  // .then(data => console.log(data))
+  // .catch(error => console.error('Error:', error));
+  fetch('https://guge.chuanzhenhe58.workers.dev/api/hello')
+  .then(res => res.json())
+  .then(data => {
+    console.log('Response from worker:', data);
+
+    setMsg(data.message);
+  });
 
   }
   const features = [
@@ -204,7 +187,7 @@ const App = () => {
               onClick={() => clickWorker()}
               className="border-2 border-white/30 hover:border-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 backdrop-blur-sm hover:bg-white/10"
             >
-              点击调取worker
+              点击调取worker==展示{msg}
             </button>
           </div>
         </div>
