@@ -6,19 +6,10 @@ const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const [time, setTime] = useState("");
+  // const [time, setTime] = useState("");
+  // const [msg, setMsg] = useState("加载中...");
 
-  useEffect(() => {
-    fetch("/api/time")
-      .then(res => {
-        if (!res.ok) throw new Error("Network response was not ok");
-        return res.json();
-      })
-      .then(data => setTime(data.time))
-      .catch(err => {
-        console.error("Failed to fetch time:", err);
-      });
-  }, []);
+ 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -35,6 +26,10 @@ const App = () => {
   //点击调取worker后端
   const clickWorker=async()=>{
     console.log('clickWorker');
+    fetch('https://guge.wps.baby/api/hello')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
     // fetch("/api/time")
     // .then(res => {
     //   if (!res.ok) throw new Error("Network response was not ok");

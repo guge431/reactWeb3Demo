@@ -4,7 +4,6 @@ type = "javascript"
 account_id = "4f40072148e17ca7da3e3cb44efd551c"
 main = "workers-site/index.js"
 
-routes = ["reactweb3demo.pages.dev/*"]
 zone_name = "guge.wps.baby"
 
 [build]
