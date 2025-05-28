@@ -1,8 +1,19 @@
 name = "guge"
-compatibility_date = "2025-05-27"
+compatibility_date = "2025-05-28"
+account_id = "4f40072148e17ca7da3e3cb44efd551c"
 
 [build]
 command = "npm run build"
 
 [assets]
 directory = "./build"
+
+
+[site]
+bucket = "./build"
+entry-point = "workers-site"
+run_worker_first = true
+
+[routes]
+pattern = "reactweb3demo.pages.dev/*" 
+zone_name = "guge.wps.baby"

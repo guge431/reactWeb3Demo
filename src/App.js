@@ -25,7 +25,7 @@ const App = () => {
     console.log('clickWorker');
 
     try {
-      const res = await fetch("/api/hello");
+      const res = await fetch("https://guge.chuanzhenhe58.workers.dev/api/hello");
       const data = await res.json();
       console.log('data111111111111', data);
       // setMessage(data.message);
@@ -33,12 +33,8 @@ const App = () => {
       // setMessage("请求失败");
       console.error(err);
     }
-    return
-    const worker = new Worker('./worker.js');
-    worker.postMessage('hello');
-    worker.onmessage = (event) => {
-      console.log('Worker said: ', event.data);
-    };
+  
+
   }
   const features = [
     {
