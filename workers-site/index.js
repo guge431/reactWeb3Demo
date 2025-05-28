@@ -6,9 +6,18 @@ addEventListener('fetch', event => {
 
 async function handleRequest(request) {
   const url = new URL(request.url);
+  
+  const origin = request.headers.get("Origin");
+  // ✅ 设置允许跨域的来源列表
+  const allowedOrigins = [
+    "http://localhost:3000",
+    "https://guge.wps.baby", // 你的正式前端域名
+  ];
+
+  const isOriginAllowed = allowedOrigins.includes(origin);
+
   const corsHeaders = {
-    // 'Access-Control-Allow-Origin': 'http://localhost:3000', // 本地开发
-    'Access-Control-Allow-Origin': 'https://guge.chuanzhenhe58.workers.dev', // 本地开发
+    "Access-Control-Allow-Origin": isOriginAllowed ? origin : "", // 动态设置
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
     'Access-Control-Allow-Headers': '*',
     'Access-Control-Max-Age': '86400',
