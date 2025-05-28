@@ -7,7 +7,8 @@ addEventListener('fetch', event => {
 async function handleRequest(request) {
   const url = new URL(request.url);
   const corsHeaders = {
-    'Access-Control-Allow-Origin': 'http://localhost:3000', // 本地开发
+    // 'Access-Control-Allow-Origin': 'http://localhost:3000', // 本地开发
+    'Access-Control-Allow-Origin': 'https://guge.chuanzhenhe58.workers.dev', // 本地开发
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
     'Access-Control-Allow-Headers': '*',
     'Access-Control-Max-Age': '86400',
