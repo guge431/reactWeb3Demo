@@ -20,7 +20,26 @@ const App = () => {
     setActiveSection(sectionId);
     setIsMenuOpen(false);
   };
+  //点击调取worker后端
+  const clickWorker=async()=>{
+    console.log('clickWorker');
 
+    try {
+      const res = await fetch("/api/hello");
+      const data = await res.json();
+      console.log('data111111111111', data);
+      // setMessage(data.message);
+    } catch (err) {
+      // setMessage("请求失败");
+      console.error(err);
+    }
+    return
+    const worker = new Worker('./worker.js');
+    worker.postMessage('hello');
+    worker.onmessage = (event) => {
+      console.log('Worker said: ', event.data);
+    };
+  }
   const features = [
     {
       icon: <Zap className="w-8 h-8" />,
@@ -164,6 +183,12 @@ const App = () => {
               className="border-2 border-white/30 hover:border-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 backdrop-blur-sm hover:bg-white/10"
             >
               联系我们
+            </button>
+            <button
+              onClick={() => clickWorker()}
+              className="border-2 border-white/30 hover:border-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 backdrop-blur-sm hover:bg-white/10"
+            >
+              点击调取worker
             </button>
           </div>
         </div>
