@@ -452,7 +452,7 @@ const App = () => {
       <div>
       {modalOpen && <ChatModal onClose={() => setModalOpen(false)} />}
       <div className="chat-float-button" onClick={() => setModalOpen(true)}>
-        💬
+      AI 对话
       </div>
     </div>
        

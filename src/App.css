@@ -40,21 +40,23 @@
   position: fixed;
   bottom: 24px;
   right: 24px;
-  width: 56px;
-  height: 56px;
-  background-color: #007bff;
-  color: white;
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  font-size: 24px;
-  z-index: 1000;
-  transition: background-color 0.3s ease;
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+      border: none;
+      border-radius: 50px;
+      padding: 15px 30px;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(79, 172, 254, 0.5);
+ 
+      transition: all 0.3s ease;
 }
 
 .chat-float-button:hover {
-  background-color: #0056b3;
+  box-shadow: 0 0 30px rgba(79, 172, 254, 0.9);
+      transform: scale(1.05);
 }
