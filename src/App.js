@@ -185,7 +185,7 @@ const App = () => {
               onClick={() => clickWorker()}
               className="border-2 border-white/30 hover:border-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 backdrop-blur-sm hover:bg-white/10"
             >
-              点击调取worker==展示{msg}
+             {msg}
             </button>
           </div>
         </div>
