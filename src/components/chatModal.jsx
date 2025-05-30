@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './ChatModal.css';
 
 const ChatModal = ({ onClose }) => {
@@ -7,7 +7,12 @@ const ChatModal = ({ onClose }) => {
   ]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
-
+  useEffect(() => {
+    const el = document.querySelector('.chat-content');
+    if (el) {
+      el.scrollTop = el.scrollHeight;
+    }
+  }, [messages, loading]);
   const sendMessage = async () => {
     if (!input.trim()) return;
 
