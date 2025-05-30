@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
 import './App.css';
 
 function App() {
@@ -55,7 +56,7 @@ function App() {
             key={index}
             className={`chat-message ${msg.role === 'user' ? 'user' : 'ai'}`}
           >
-            <div className="message-bubble">{msg.content}</div>
+            <div className="message-bubble"><ReactMarkdown>{msg.content}</ReactMarkdown></div>
           </div>
         ))}
          {loading && <div className="message assistant"><span>AI 正在输入...</span></div>}
