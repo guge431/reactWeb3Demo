@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Star, Users, Zap, Shield, ArrowRight, Mail, Phone, MapPin } from 'lucide-react';
-// import App from '../../my-app-web3/src/App';
+import ChatModal from './components/chatModal.jsx';
+import './App.css'
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,6 +9,7 @@ const App = () => {
   const [activeSection, setActiveSection] = useState('home');
   // const [time, setTime] = useState("");
   const [msg, setMsg] = useState("加载中...");
+  const [modalOpen, setModalOpen] = useState(false);
 
  
   useEffect(() => {
@@ -26,10 +28,6 @@ const App = () => {
   //点击调取worker后端
   const clickWorker=async()=>{
     console.log('clickWorker');
-  //   fetch('https://guge.wps.baby/api/hello')
-  // .then(response => response.json())
-  // .then(data => console.log(data))
-  // .catch(error => console.error('Error:', error));
   fetch('https://guge.chuanzhenhe58.workers.dev/api/hello')
   .then(res => res.json())
   .then(data => {
@@ -449,6 +447,16 @@ const App = () => {
           </div>
         </div>
       </footer>
+
+      {/* 弹窗 */}
+      <div>
+      {modalOpen && <ChatModal onClose={() => setModalOpen(false)} />}
+      <div className="chat-float-button" onClick={() => setModalOpen(true)}>
+        💬
+      </div>
+    </div>
+       
+
     </div>
   );
 };

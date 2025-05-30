@@ -40,6 +40,31 @@ async function handleRequest(request) {
         ...corsHeaders,
       },
     });
+  }else if(url.pathname.startsWith('/api/deepseek/ai')){
+    if (request.method !== 'POST') {
+      return new Response('Method Not Allowed', { status: 405 });
+    }
+    const body = await request.json();
+    const deepseekRes = await fetch('https://api.deepseek.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer sk-b3b144cc111f4f67bd1fe3f0b6d368f6', 
+      },
+      body: JSON.stringify({
+        model: 'deepseek-chat',
+        messages: body.messages,
+      }),
+    });
+
+    const data = await deepseekRes.text();
+    return new Response(data, {
+      status: deepseekRes.status,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
   }
 
   // 服务静态资源（CRA 的 build 文件）
