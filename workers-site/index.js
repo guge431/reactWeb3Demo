@@ -17,7 +17,7 @@ async function handleRequest(request) {
   const isOriginAllowed = allowedOrigins.includes(origin);
 
   const corsHeaders = {
-    "Access-Control-Allow-Origin": isOriginAllowed ? origin : "", // 动态设置
+    "Access-Control-Allow-Origin": isOriginAllowed ? origin : "null", // 动态设置
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
     'Access-Control-Allow-Headers': '*',
     'Access-Control-Max-Age': '86400',
@@ -42,7 +42,7 @@ async function handleRequest(request) {
     });
   }else if(url.pathname.startsWith('/api/deepseek/ai')){
     if (request.method !== 'POST') {
-      return new Response('Method Not Allowed', { status: 405 });
+      return new Response('Method Not Allowed', { status: 405,headers: corsHeaders, });
     }
     const body = await request.json();
     const deepseekRes = await fetch('https://api.deepseek.com/v1/chat/completions', {
@@ -62,6 +62,7 @@ async function handleRequest(request) {
       status: deepseekRes.status,
       headers: {
         'Content-Type': 'application/json',
+        ...corsHeaders,
       },
     });
 
