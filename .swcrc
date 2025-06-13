@@ -20,7 +20,8 @@
             "pragmaFrag": "React.Fragment",
             "throwIfNamespace": true,
             "development": false,
-            "useBuiltins": false
+            "useBuiltins": false,
+            "runtime":"automatic"
         },
     },
       "target": "es5",

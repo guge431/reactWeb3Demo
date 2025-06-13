@@ -38,7 +38,7 @@ const webpackConfig={
                 type: 'asset/resource',
               },
             {
-                test:/\.(ts|tsx)$/,
+                test:/\.([jt]s|[jt]sx)$/,
                 exclude:/(node_modules)/,
                 use:['swc-loader']
             },
