@@ -1,23 +1,118 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# 依赖文件
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# 构建输出
+build/
+dist/
+*.tsbuildinfo
 
-# testing
-/coverage
-
-# production
-/build
-
-# misc
-.DS_Store
+# 环境变量
+.env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# 日志文件
+logs
+*.log
+
+# 运行时数据
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# 覆盖率报告
+coverage/
+*.lcov
+.nyc_output
+
+# 测试输出
+test-results/
+playwright-report/
+
+# 编辑器和IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS生成的文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Webpack
+.webpack/
+
+# 临时文件
+*.tmp
+*.temp
+
+# 缓存目录
+.cache/
+.parcel-cache/
+
+# 可选的npm缓存目录
+.npm
+
+# 可选的ESLint缓存
+.eslintcache
+
+# Microbundle缓存
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# 可选的REPL历史
+.node_repl_history
+
+# 输出的压缩文件
+*.tar.gz
+*.zip
+
+# Yarn Integrity文件
+.yarn-integrity
+
+# dotenv环境变量文件
+.env.build
+
+# parcel-bundler缓存
+.parcel-cache
+
+# Next.js构建输出
+.next/
+out/
+
+# Nuxt.js构建/生成输出
+.nuxt
+dist
+
+# Gatsby文件
+.cache/
+public
+
+# Storybook构建输出
+.out
+.storybook-out
+
+# 临时文件夹
+tmp/
+temp/
+
+# 本地Netlify文件夹
+.netlify
+
+# 项目特定的忽略文件
+# 添加你的项目特定文件和目录...
