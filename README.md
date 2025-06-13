@@ -1,35 +1,3 @@
-
-{ "name": "react-web3-demo", "version": "0.1.0", "private": true, "dependencies": { "@cloudflare/kv-asset-handler": "^0.4.0", "@testing-library/dom": "^10.4.0", "@testing-library/jest-dom": "^6.6.3", "@testing-library/react": "^16.3.0", "@testing-library/user-event": "^13.5.0", "lucide-react": "^0.511.0", "react": "^19.1.0", "react-dom": "^19.1.0", "react-markdown": "^10.1.0", "react-scripts": "^5.0.1", "web-vitals": "^2.1.4" }, "scripts": { "build:dev": "webpack --mode development", "build:prod": "webpack --mode production", "start": "webpack serve --mode development", "test": "react-scripts test", "eject": "react-scripts eject" }, "eslintConfig": { "extends": [ "react-app", "react-app/jest" ] }, "browserslist": { "production": [ ">0.2%", "not dead", "not op_mini all" ], "development": [ "last 1 chrome version", "last 1 firefox version", "last 1 safari version" ] }, "devDependencies": { "@soda/friendly-errors-webpack-plugin": "^1.8.1", "@swc/core": "^1.12.0", "@types/react": "^19.1.8", "@types/react-dom": "^19.1.6", "autoprefixer": "^10.4.21", "clean-webpack-plugin": "^4.0.0", "css-loader": "^7.1.2", "css-minimizer-webpack-plugin": "^7.0.2", "eslint": "^9.28.0", "eslint-config-airbnb-typescript": "^18.0.0", "html-webpack-plugin": "^5.6.3", "mini-css-extract-plugin": "^2.9.2", "postcss": "^8.5.3", "postcss-loader": "^8.1.1", "swc-loader": "^0.2.6", "tailwindcss": "^3.4.17", "terser-webpack-plugin": "^5.3.14", "themed-progress-plugin": "^1.0.1", "webpack": "^5.99.9", "webpack-bundle-analyzer": "^4.10.2", "webpack-cli": "^6.0.1", "webpack-dev-server": "^5.2.2", "webpack-merge": "^6.0.1", "yargs-parser": "^22.0.0" } } 请给我写一个README
-
-I'll create a comprehensive README for your React Web3 demo project based on the package.json configuration.
-
-
-React Web3 Demo README
-Document 
-
-
-
-请用中文
-
-
-React Web3 Demo README
-Document 
-我已经为你的 React Web3 演示项目创建了一个完整的中文 README 文档。这个 README 包含了：
-
-主要特点：
-
-项目特性和技术栈的详细介绍
-完整的安装和使用说明
-项目结构和配置说明
-开发指南和最佳实践
-部署选项和脚本说明
-**根据你的 package.json 分析
-
-
-
-
-
-React Web3 演示项目
 一个现代化的 React 应用程序，展示 Web3 集成，使用 Webpack 和 SWC 进行优化构建配置。
 
 🚀 项目特性
