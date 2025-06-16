@@ -1,14 +1,15 @@
 import { useState,useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Send, Bot, User } from 'lucide-react';
+import { useImmer } from '@/hooks/UseImmer';
 import './App.css';
 
 function App() {
-  const [messages, setMessages] = useState([
+  const [messages, setMessages] = useImmer([
     { role: 'assistant', content: '你好，我是AI，有什么我可以帮助你的吗？' },
   ]);
-  const [input, setInput] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [input, setInput] = useImmer('');
+  const [loading, setLoading] = useImmer(false);
   useEffect(() => {
     const el = document.querySelector('.chat-body');
     if (el) {
