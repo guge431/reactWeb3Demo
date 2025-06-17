@@ -2,6 +2,7 @@
   "name": "react-web3-demo",
   "version": "0.1.0",
   "private": true,
+   "type": "commonjs",
   "dependencies": {
     "@cloudflare/kv-asset-handler": "^0.4.0",
     "@testing-library/dom": "^10.4.0",

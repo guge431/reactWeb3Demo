@@ -2,7 +2,9 @@
 const path=require('path')
 const {resolve}=path
 const merge=require('webpack-merge').default
-const argv=require('yargs-parser')(process.argv.slice(2))
+const minimist = require('minimist');
+const argv = minimist(process.argv.slice(2))
+// const argv=require('yargs-parser')(process.argv.slice(2))
 const _mode=argv.mode || 'development'
 const _modeflag=_mode==='production'?true:false
 const _webpackConfig=require(`./config/webpack-${_mode}.js`)
