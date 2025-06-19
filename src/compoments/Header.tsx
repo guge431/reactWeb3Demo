@@ -23,7 +23,7 @@ const Header = () => {
           {/* 左侧 Logo */}
           <div className="flex items-center">
             <Link to="/" className="text-xl font-bold text-gray-800 hover:text-gray-900">
-              www.yidengfe.com
+              项目名称
             </Link>
           </div>
 
@@ -56,6 +56,21 @@ const Header = () => {
             >
               <Wallet className="w-5 h-5 mr-1" />
               <span>DApp</span>
+            </Link>
+
+            <Link
+              to="/aiChat"
+              className={`
+                flex items-center transition-colors
+                ${
+                  isActiveRoute('/aiChat')
+                    ? 'text-blue-600 font-medium'
+                    : 'text-gray-600 hover:text-gray-900'
+                }
+              `}
+            >
+              <Wallet className="w-5 h-5 mr-1" />
+              <span>aiChat</span>
             </Link>
           </nav>
 

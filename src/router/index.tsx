@@ -6,6 +6,7 @@ import PageNotFoundView from '@/compoments/PageNotFoundView';
 import Test from '@/compoments/Test';
 import Loading from '@/compoments/Loading';
 import DappTest from '@/pages/DappTest'
+import AiChat from '@/pages/AiChat';
 import { lazy, Suspense } from 'react';
 import Home from '@pages/Home';
 
@@ -16,7 +17,8 @@ const mainRoutes = {
     element: <Layout />,
     children: [
       { path: '*', element: <PageNotFoundView /> },
-    //   { path: '/dapp', element: <DappTest /> },
+      { path: '/dapp', element: <DappTest /> },
+      { path: '/aiChat', element: <AiChat /> },
       { path: '/', element: <Home /> },
       { path: '404', element: <PageNotFoundView /> },
     ],
